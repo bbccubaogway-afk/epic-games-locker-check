@@ -46,13 +46,6 @@ button {
     border: none;
     padding: 10px 15px;
     cursor: pointer;
-
-<br><br>
-
-<div id="result">
-    Estimated Locker Value: $0
-</div>
-
 }
 </style>
 
@@ -74,7 +67,14 @@ button {
 
 <br><br> 
 <button onclick="showResult()">Check Value</button>
+ {
+<br><br>
 
+<div id="result">
+    Estimated Locker Value: $0
+</div>
+
+}
 
 
 <div id="result">
@@ -126,7 +126,6 @@ window.showResult = async function () {
     }
 };
 
-}
 </script>
 
 </body>
